@@ -12,3 +12,16 @@
  *
  */
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ .users {
+   width: 90px;
+   height: 90px;
+   background-color: lightgrey;
+   padding-top: 20px;
+ }
+
+ .chat {
+   height: 67vh;
+ }
