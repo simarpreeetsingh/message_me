@@ -12,6 +12,9 @@
         <p class="mb-1"><a href="">Ove</a> added <a href="">Peter</a> as friend.</p>
         <p class="mb-1"><a href="">Tom Hardy</a> added <a href="">Venom</a> as friend.</p>
         <p class="mb-1"><a href="">Arun</a> signed up for this site.</p>
+        <% @messages.each do | msg | %>
+          <p class="mb-1"><a href="" class="text-decoration-none"><%= msg.user.username %></a>: <%= msg.body %></p>
+        <% end %>
       </div>
       <div class="input-group mb-3">
         <hr class="w-100">
