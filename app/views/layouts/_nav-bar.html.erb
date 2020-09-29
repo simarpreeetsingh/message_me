@@ -22,7 +22,11 @@
           </div>
         </li>
         <li class="nav-item d-flex align-items-center">
-          <%= link_to 'Login', login_path, class: 'btn btn-primary py-0' %>
+          <% if (logged_in?) %>
+            <%= link_to 'Logout', logout_path, method: :delete, class: 'btn btn-danger py-0' %>
+          <% else %>
+            <%= link_to 'Login', login_path, class: 'btn btn-primary py-0' %>
+          <% end %>
         </li>
       </ul>
     </div>

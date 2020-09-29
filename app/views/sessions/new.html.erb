@@ -43,7 +43,7 @@
   <div class="login card row w-75 bg-light d-flex justify-content-between flex-row">
     <div class="col-lg-5 d-flex flex-column justify-content-center">
       <div class="d-flex flex-column align-items-center ml-5 pl-5">
-        <%= form_with(model: @user, url: login_path, local: true) do | f | %>
+        <%= form_with(scope: :session, url: login_path, local: true) do | f | %>
           <div>
             <%= f.label :username, 'Username' %>
             <div class="input-group mb-3">
