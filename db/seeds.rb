@@ -13,5 +13,5 @@ User.create(username: "Peter Tomar", password: "password")
 User.create(username: "Bunty Singh", password: "password")
 User.create(username: "Babloo Gunda", password: "password")
 
-User.find(1).messages << Message.create(body: "Hello")
+# User.find(1).messages << Message.create(body: "Hello")
 User.last.messages << Message.create(body: "Mujhe don banne ka shock hai!")

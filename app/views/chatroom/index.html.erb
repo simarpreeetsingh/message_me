@@ -18,10 +18,21 @@
       </div>
       <div class="input-group mb-3">
         <hr class="w-100">
+        <!-- EXPECTED FORMATTING
         <input type="text" class="form-control" placeholder="Enter a message">
         <div class="input-group-append">
-          <button class="btn btn-success" type="button"><i class="fas fa-search "></i></button>
+          <button class="btn btn-success" type="button"><i class="fas fa-paper-plane"></i></button>
         </div>
+        EXPECTED FORMATTING -->
+        <%= form_with(scope: :message, url: message_path, local: true, class: 'w-100') do | f | %>
+          <%= f.text_field :body, class: 'form-control', placeholder: 'Enter a message baby' %>
+          <!-- WHY IS THIS NOT GETTING APPENDED WITH THE TEXT FIELD?? -->
+          <div class="input-group-append">
+            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <i class="fas fa-paper-plane"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
