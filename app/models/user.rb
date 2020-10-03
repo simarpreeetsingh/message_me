@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
   
   validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }
 

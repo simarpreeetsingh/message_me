@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if (user && user.authenticate(params[:session][:password]))
       session[:user_id] = user.id
-      flash[:success] = "Welcome to ChatRoom #{user.username}!"
+      flash[:success] = "Welcome to ChatRoom, #{user.username}!"
       redirect_to root_path
     else
       flash.now[:warning] = "Invalid credentials! Try again."
