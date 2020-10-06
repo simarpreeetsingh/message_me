@@ -4,16 +4,16 @@
 </div>
 
 <div class="chat row px-5 mx-0">
-  <div class="col-lg-9">
+  <div class="col-lg-9 mh-100">
     <div class="card shadow w-100 h-100 px-3 pt-2 d-flex justify-content-between">
-      <div>
+      <div class="overflow-auto" id="message-container">
         <h4 class="">Followers activity</h4>
         <p class="mb-1"><a href="">Zack Snyder</a> added <a href="">Zack Knight</a> as friend.</p>
         <p class="mb-1"><a href="">Ove</a> added <a href="">Peter</a> as friend.</p>
         <p class="mb-1"><a href="">Tom Hardy</a> added <a href="">Venom</a> as friend.</p>
         <p class="mb-1"><a href="">Arun</a> signed up for this site.</p>
         <% @messages.each do | msg | %>
-          <p class="mb-1"><a href="" class="text-decoration-none"><%= msg.user.username %></a>: <%= msg.body %></p>
+          <p class="msg mb-1"><a href="" class="text-decoration-none"><%= msg.user.username %></a>: <%= msg.body %></p>
         <% end %>
       </div>
       <div class="input-group mb-3">
@@ -24,8 +24,9 @@
           <button class="btn btn-success" type="button"><i class="fas fa-paper-plane"></i></button>
         </div>
         EXPECTED FORMATTING -->
-        <%= form_with(scope: :message, url: message_path, local: true, class: 'w-100') do | f | %>
-          <%= f.text_field :body, class: 'form-control', placeholder: 'Enter a message baby' %>
+        <%= form_with(scope: :message, url: message_path, local: true, remote: true, class: 'w-100') do | f | %>
+          <!-- WHY IS remote: true needed?? -->
+          <%= f.text_field :body, class: 'form-control', id: 'msg-input', placeholder: 'Enter a message baby' %>
           <!-- WHY IS THIS NOT GETTING APPENDED WITH THE TEXT FIELD?? -->
           <div class="input-group-append">
             <%= button_tag(type: 'submit', class: "btn btn-success") do %>

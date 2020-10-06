@@ -17,3 +17,19 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+var scroll_bottom = function () {
+  // console.log($('#message-container').length)
+  // console.log($('#message-container'))
+  // $('#message-container').scrollTop($('#message-container').scrollHeight);
+  // if ($('#message-container').length > 0) {
+  //   console.log($('#message-container')[0])
+  //   $('#message-container').scrollTop($('#message-container').height());
+  // }
+  // console.log('new')
+  // $('#message-container').animate({
+  //   scrollTop: $('#message-container .msg:last-child').position().top
+  // }, 'slow');
+}
+
+scroll_bottom()
